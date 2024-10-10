@@ -1,0 +1,119 @@
+## 节点操作
+
+### add_node
+
+根据坐标信息和节点编号添加节点，默认自动识别编号
+
+> 参数:
+node_data: [id,x,y,z]  或 [x,y,z]
+intersected: 是否交叉分割
+is_merged: 是否忽略位置重复节点
+merge_error: 合并容许误差
+
+```Python
+# 示例代码
+from qtmodel import *
+mdb.add_node([1,2,3])
+mdb.add_node([1,1,2,3])
+```
+
+Returns: 无
+
+### update_node
+
+根据节点号修改节点坐标
+
+> 参数:
+node_id: 节点编号
+x: 更新后x坐标
+y: 更新后y坐标
+z: 更新后z坐标
+
+```Python
+# 示例代码
+from qtmodel import *
+mdb.update_node(1,2,2,2)
+```
+
+Returns: 无
+
+### update_node_id
+
+修改节点Id
+
+> 参数:
+node_id: 节点编号
+new_id: 新节点编号
+
+```Python
+# 示例代码
+from qtmodel import *
+mdb.update_node_id(1,2)
+```
+
+Returns: 无
+
+### merge_nodes
+
+根据坐标信息和节点编号添加节点，默认自动识别编号
+
+> 参数:
+ids: 合并节点集合  默认全部节点
+tolerance: 合并容许误差
+
+```Python
+# 示例代码
+from qtmodel import *
+mdb.merge_nodes()
+```
+
+Returns: 无
+
+### remove_node
+
+删除指定节点,不输入参数时默认删除所有节点
+
+> 参数:
+ids:节点编号
+
+```Python
+# 示例代码
+from qtmodel import *
+mdb.remove_node()
+mdb.remove_node(ids=1)
+mdb.remove_node(ids=[1,2,3])
+```
+
+Returns: 无
+
+### renumber_node
+
+节点编号重拍
+
+> 参数:
+
+```Python
+# 示例代码
+from qtmodel import *
+mdb.renumber_node()
+```
+
+Returns: 无
+
+### move_node
+
+移动节点坐标
+
+> 参数:
+node_id:节点号
+offset_x:X轴偏移量
+offset_y:Y轴偏移量
+offset_z:Z轴偏移量
+
+```Python
+# 示例代码
+from qtmodel import *
+mdb.move_node(1,1.5,1.5,1.5)
+```
+
+Returns: 无
